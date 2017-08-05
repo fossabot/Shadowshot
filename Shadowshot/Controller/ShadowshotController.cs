@@ -83,7 +83,13 @@ namespace Shadowshot.Controller
 
         private static void SaveToClipboard(Image image)
         {
-            Clipboard.SetImage(image);
+            using (var imageWithBackground = new Bitmap(image.Width, image.Height, PixelFormat.Format24bppRgb))
+            using (var graphics = Graphics.FromImage(imageWithBackground))
+            {
+                graphics.Clear(Color.White);
+                graphics.DrawImage(image, Point.Empty);
+                Clipboard.SetImage(imageWithBackground);
+            }
         }
 
         internal enum Operation

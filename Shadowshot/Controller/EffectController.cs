@@ -21,7 +21,7 @@ namespace Shadowshot.Controller
 
                 using (var graphics = Graphics.FromImage(result))
                 {
-                    graphics.Clear(Color.White);
+                    graphics.Clear(Color.Transparent);
                     graphics.DrawImage(dropShadow1, 0, 0);
                     graphics.DrawImage(dropShadow2, 40, 40);
                     graphics.DrawImage(image, 43, 43);
