@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Shadowshot.Controller
 {
-    internal static class EffectController
+    internal static class EffectsController
     {
-        internal static Image ApplyDropShadow(Image image)
+        internal static Image DropShadow(Image image)
         {
             Image result;
             using (var dropShadow1 = CreateDropShadow(image.Width, image.Height, 0.47, 0, 26, 43))
@@ -33,20 +33,20 @@ namespace Shadowshot.Controller
         private static Image CreateDropShadow(int screenShotWidth, int screenShotHeight,
             double opacity, int distanceX, int distanceY, int size)
         {
-            var width = screenShotWidth + 2 * size;
-            var height = screenShotHeight + 2 * size;
+            var width = screenShotWidth + Math.Abs(distanceX) + 2 * size;
+            var height = screenShotHeight + Math.Abs(distanceY) + 2 * size;
             var grayScale = new byte[width * height];
 
             FillRectangle(grayScale, screenShotWidth, screenShotHeight, opacity, distanceX, distanceY, size);
-            GaussianBlur(grayScale, screenShotWidth, screenShotHeight, size);
-            return ToImage(grayScale, screenShotWidth, screenShotHeight, size);
+            GaussianBlur(grayScale, screenShotWidth, screenShotHeight, distanceX, distanceY, size);
+            return ToImage(grayScale, screenShotWidth, screenShotHeight, distanceX, distanceY, size);
         }
 
         private static void FillRectangle(IList<byte> grayScale, int screenShotWidth, int screenShotHeight,
             double opacity, int distanceX, int distanceY, int size)
         {
-            var width = screenShotWidth + 2 * size;
-            var height = screenShotHeight + 2 * size;
+            var width = screenShotWidth + Math.Abs(distanceX) + 2 * size;
+            var height = screenShotHeight + Math.Abs(distanceY) + 2 * size;
             var dropShadowRectangle = Rectangle.FromLTRB(
                 distanceX > 0 ? size + distanceX : size,
                 distanceY > 0 ? size + distanceY : size,
@@ -66,10 +66,11 @@ namespace Shadowshot.Controller
             }
         }
 
-        private static void GaussianBlur(IList<byte> grayScale, int screenShotWidth, int screenShotHeight, int size)
+        private static void GaussianBlur(IList<byte> grayScale, int screenShotWidth, int screenShotHeight,
+            int distanceX, int distanceY, int size)
         {
-            var width = screenShotWidth + 2 * size;
-            var height = screenShotHeight + 2 * size;
+            var width = screenShotWidth + Math.Abs(distanceX) + 2 * size;
+            var height = screenShotHeight + Math.Abs(distanceY) + 2 * size;
             var unusedRectangle = Rectangle.FromLTRB(2 * size, 2 * size, screenShotWidth, screenShotHeight);
 
             var kernel = GetGaussianKernel(size);
@@ -113,10 +114,11 @@ namespace Shadowshot.Controller
             }
         }
 
-        private static Image ToImage(IList<byte> grayScale, int screenShotWidth, int screenShotHeight, int size)
+        private static Image ToImage(IList<byte> grayScale, int screenShotWidth, int screenShotHeight,
+            int distanceX, int distanceY, int size)
         {
-            var width = screenShotWidth + 2 * size;
-            var height = screenShotHeight + 2 * size;
+            var width = screenShotWidth + Math.Abs(distanceX) + 2 * size;
+            var height = screenShotHeight + Math.Abs(distanceY) + 2 * size;
             var screenShotRectangle = Rectangle.FromLTRB(size, size, screenShotWidth + size, screenShotHeight + size);
 
             var bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
