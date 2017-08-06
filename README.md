@@ -4,6 +4,8 @@
 
 A screenshot tool with shadow.
 
+![Example screenshot of Shadowshot](https://user-images.githubusercontent.com/4309091/29003106-1863ff2e-7ae3-11e7-8ff7-46d75b52a9f3.png)
+
 ## Usage
 
 | Operation                                                | Hotkey                                                                        |
