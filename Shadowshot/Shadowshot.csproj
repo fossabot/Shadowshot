@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AutoStartController.cs" />
     <Compile Include="Controller\ShadowshotController.cs" />
     <Compile Include="Controller\EffectController.cs" />
     <Compile Include="MainForm.cs">

@@ -9,7 +9,10 @@ namespace Shadowshot
 {
     public partial class MainForm : Form
     {
+        private MenuItem _autoStartMenuItem;
+        private MenuItem _exitMenuItem;
         private NotifyIcon _notifyIcon;
+        private MenuItem _seperatorItem;
 
         public MainForm()
         {
@@ -33,11 +36,20 @@ namespace Shadowshot
 
         private void InitializeNotifyIcon()
         {
+            _seperatorItem = new MenuItem("-");
+            _autoStartMenuItem = new MenuItem("Auto Start", AutoStartMenuItem_Click)
+            {
+                Checked = AutoStartController.IsEnabled
+            };
+            _exitMenuItem = new MenuItem("Exit", ExitMenuItem_Click);
+
             _notifyIcon = new NotifyIcon(components)
             {
                 ContextMenu = new ContextMenu(new[]
                 {
-                    new MenuItem("Exit", ExitMenuItem_Click)
+                    _autoStartMenuItem,
+                    _seperatorItem,
+                    _exitMenuItem
                 }),
                 Icon = Resources.Icon,
                 Text = "Shadowshot",
@@ -61,6 +73,12 @@ namespace Shadowshot
                 foreach (var operation in Enum.GetValues(typeof(ShadowshotController.Operation)))
                     NativeMethods.UnregisterHotKey(Handle, (int) operation);
             };
+        }
+
+        private void AutoStartMenuItem_Click(object sender, EventArgs eventArgs)
+        {
+            AutoStartController.IsEnabled = !AutoStartController.IsEnabled;
+            _autoStartMenuItem.Checked = AutoStartController.IsEnabled;
         }
 
         private void ExitMenuItem_Click(object sender, EventArgs eventArgs)
