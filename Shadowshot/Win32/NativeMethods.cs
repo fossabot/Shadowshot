@@ -20,14 +20,15 @@ namespace Shadowshot.Win32
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr GetForegroundWindow();
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern bool IsZoomed(IntPtr hwnd);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern bool GetWindowInfo(IntPtr hwnd, out WindowInfo pwi);
+
         [DllImport("dwmapi.dll", CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern int DwmGetWindowAttribute(
             IntPtr hwnd, DwmWindowAttribute dwAttribute, out Rect pvAttribute, int cbAttribute);
-
-        internal enum DwmWindowAttribute
-        {
-            DwmwaExtendedFrameBounds = 9
-        }
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct Rect
@@ -36,6 +37,26 @@ namespace Shadowshot.Win32
             internal readonly int Top;
             internal readonly int Right;
             internal readonly int Bottom;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct WindowInfo
+        {
+            private readonly uint cbSize;
+            private readonly Rect rcWindow;
+            private readonly Rect rcClient;
+            private readonly uint dwStyle;
+            private readonly uint dwExStyle;
+            private readonly uint dwWindowStatus;
+            internal readonly uint cxWindowBorders;
+            internal readonly uint cyWindowBorders;
+            private readonly ushort atomWindowType;
+            private readonly ushort wCreatorVersion;
+        }
+
+        internal enum DwmWindowAttribute
+        {
+            DwmwaExtendedFrameBounds = 9
         }
     }
 }

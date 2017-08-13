@@ -2,5 +2,8 @@ version: 0.1.0.{build}
 
 image: Visual Studio 2017
 
+install:
+  - ps: nuget restore
+
 build:
   verbosity: detailed

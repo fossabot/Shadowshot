@@ -5,7 +5,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace Shadowshot.Controller
+namespace Shadowshot.Controllers
 {
     internal static class EffectsController
     {

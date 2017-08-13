@@ -2,10 +2,12 @@
 using System.Reflection;
 using Microsoft.Win32;
 
-namespace Shadowshot.Controller
+namespace Shadowshot.Controllers
 {
     internal static class AutoStartController
     {
+        private const string RegistryKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
+        private const string RegistryKeyName = "Shadowshot";
         private static bool _isEnabled;
 
         static AutoStartController()
@@ -13,11 +15,11 @@ namespace Shadowshot.Controller
             try
             {
                 using (var registryKey =
-                    Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                    Registry.CurrentUser.OpenSubKey(RegistryKeyPath, true))
                 {
                     if (registryKey == null)
                         throw new NullReferenceException();
-                    _isEnabled = registryKey.GetValue("Shadowshot") != null;
+                    _isEnabled = registryKey.GetValue(RegistryKeyName) != null;
                 }
             }
             catch (NullReferenceException)
@@ -34,17 +36,15 @@ namespace Shadowshot.Controller
                 try
                 {
                     using (var registryKey =
-                        Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                        Registry.CurrentUser.OpenSubKey(RegistryKeyPath, true))
                     {
                         if (registryKey == null)
                             throw new NullReferenceException();
-                        var path = Assembly.GetEntryAssembly().Location;
-                        if (path == null)
-                            throw new NullReferenceException();
+                        var path = Assembly.GetEntryAssembly().Location ?? string.Empty;
                         if (value)
-                            registryKey.SetValue("Shadowshot", path);
-                        else
-                            registryKey.DeleteValue("Shadowshot");
+                            registryKey.SetValue(RegistryKeyName, path);
+                        else if (registryKey.GetValue(RegistryKeyName) != null)
+                            registryKey.DeleteValue(RegistryKeyName);
                         _isEnabled = value;
                     }
                 }

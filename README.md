@@ -8,9 +8,9 @@ A screenshot tool with shadow.
 
 ## Usage
 
-| Operation                                                | Hotkey                                                                        |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Take a screenshot of entire screen and save to clipboard | <kbd>Ctrl</kbd> + <kbd>Print Screen</kbd>                                     |
-| Take a screenshot of active window and save to clipboard | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Print Screen</kbd>                    |
-| Take a screenshot of entire screen and save to desktop   | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Print Screen</kbd>                  |
-| Take a screenshot of active window and save to desktop   | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Print Screen</kbd> |
+| Operation                                                | Hotkey                                                             |
+| -------------------------------------------------------- | ------------------------------------------------------------------ |
+| Take a screenshot of entire screen and save to desktop   | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd>                   |
+| Take a screenshot of active window and save to desktop   | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>                   |
+| Take a screenshot of entire screen and save to clipboard | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd> |
+| Take a screenshot of active window and save to clipboard | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> |

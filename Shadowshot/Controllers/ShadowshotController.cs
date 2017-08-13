@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Shadowshot.Win32;
 
-namespace Shadowshot.Controller
+namespace Shadowshot.Controllers
 {
     internal static class ShadowshotController
     {
@@ -15,16 +15,16 @@ namespace Shadowshot.Controller
         {
             switch (operation)
             {
-                case Operation.EntireScreenToFile:
+                case Operation.EntireScreenToDesktop:
                     using (var image = CaptureEntireScreen())
                     {
-                        SaveToFile(image);
+                        SaveToDesktop(image);
                     }
                     break;
-                case Operation.ForegroundWindowToFile:
-                    using (var image = CaptureForegroundWindow())
+                case Operation.ActiveWindowToDesktop:
+                    using (var image = CaptureActiveWindow())
                     {
-                        SaveToFile(image);
+                        SaveToDesktop(image);
                     }
                     break;
                 case Operation.EntireScreenToClipboard:
@@ -33,8 +33,8 @@ namespace Shadowshot.Controller
                         SaveToClipboard(image);
                     }
                     break;
-                case Operation.ForegroundWindowToClipboard:
-                    using (var image = CaptureForegroundWindow())
+                case Operation.ActiveWindowToClipboard:
+                    using (var image = CaptureActiveWindow())
                     {
                         SaveToClipboard(image);
                     }
@@ -51,14 +51,18 @@ namespace Shadowshot.Controller
                     (current, screen) => Rectangle.Union(current, screen.Bounds)));
         }
 
-        private static Image CaptureForegroundWindow()
+        private static Image CaptureActiveWindow()
         {
-            NativeMethods.DwmGetWindowAttribute(NativeMethods.GetForegroundWindow(),
-                NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
+            var handle = NativeMethods.GetForegroundWindow();
+            NativeMethods.DwmGetWindowAttribute(handle, NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
                 out NativeMethods.Rect rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
-            if (rect.Left < 0 && rect.Top < 0)
-                return CaptureRectangle(new Rectangle(0, 0, rect.Right + rect.Left, rect.Bottom + rect.Top));
-            return CaptureRectangle(new Rectangle(rect.Left, rect.Top, rect.Right - rect.Left, rect.Bottom - rect.Top));
+            NativeMethods.GetWindowInfo(handle, out NativeMethods.WindowInfo windowInfo);
+            var rectangle = Rectangle.FromLTRB(rect.Left, rect.Top, rect.Right, rect.Bottom);
+            if (NativeMethods.IsZoomed(handle))
+                rectangle.Inflate(
+                    rectangle.Left < 0 ? (int) -windowInfo.cxWindowBorders : 0,
+                    rectangle.Top < 0 ? (int) -windowInfo.cyWindowBorders : 0);
+            return CaptureRectangle(rectangle);
         }
 
         private static Image CaptureRectangle(Rectangle rectangle)
@@ -73,7 +77,7 @@ namespace Shadowshot.Controller
             return result;
         }
 
-        private static void SaveToFile(Image image)
+        private static void SaveToDesktop(Image image)
         {
             var dateTime = DateTime.Now;
             image.Save(
@@ -94,10 +98,10 @@ namespace Shadowshot.Controller
 
         internal enum Operation
         {
-            EntireScreenToFile = 1,
-            ForegroundWindowToFile = 2,
-            EntireScreenToClipboard = 3,
-            ForegroundWindowToClipboard = 4
+            EntireScreenToDesktop,
+            ActiveWindowToDesktop,
+            EntireScreenToClipboard,
+            ActiveWindowToClipboard
         }
     }
 }

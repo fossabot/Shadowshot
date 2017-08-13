@@ -1,4 +1,4 @@
-﻿namespace Shadowshot
+﻿namespace Shadowshot.Views
 {
     partial class MainForm
     {
