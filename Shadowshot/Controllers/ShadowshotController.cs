@@ -58,10 +58,8 @@ namespace Shadowshot.Controllers
                 out NativeMethods.Rect rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
             NativeMethods.GetWindowInfo(handle, out NativeMethods.WindowInfo windowInfo);
             var rectangle = Rectangle.FromLTRB(rect.Left, rect.Top, rect.Right, rect.Bottom);
-            if (NativeMethods.IsZoomed(handle))
-                rectangle.Inflate(
-                    rectangle.Left < 0 ? (int) -windowInfo.cxWindowBorders : 0,
-                    rectangle.Top < 0 ? (int) -windowInfo.cyWindowBorders : 0);
+            if (NativeMethods.IsZoomed(handle) && rectangle.Left < 0 && rectangle.Top < 0)
+                rectangle.Inflate((int) -windowInfo.cxWindowBorders, (int) -windowInfo.cyWindowBorders);
             return CaptureRectangle(rectangle);
         }
 
