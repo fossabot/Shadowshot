@@ -70,7 +70,7 @@ namespace Shadowshot.Controllers
             using (var graphics = Graphics.FromImage(screenshot))
             {
                 graphics.CopyFromScreen(rectangle.Left, rectangle.Top, 0, 0, rectangle.Size);
-                result = EffectsController.DropShadow(screenshot);
+                result = EffectsController.Shadow(screenshot);
             }
             return result;
         }
