@@ -46,9 +46,7 @@ namespace Shadowshot.Controllers
 
         private static Image CaptureEntireScreen()
         {
-            return CaptureRectangle(
-                Screen.AllScreens.Aggregate(Rectangle.Empty,
-                    (current, screen) => Rectangle.Union(current, screen.Bounds)));
+            return CaptureRectangle(SystemInformation.VirtualScreen);
         }
 
         private static Image CaptureActiveWindow()
