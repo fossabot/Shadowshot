@@ -1,11 +1,7 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
+using Shadowshot.Services;
+using Shadowshot.Views;
 using Splat;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Shadowshot
@@ -13,15 +9,21 @@ namespace Shadowshot
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            
+            Locator.CurrentMutable.RegisterConstant(new AutoStartService(), typeof(AutoStartService));
+            Locator.CurrentMutable.RegisterConstant(new HotkeyService(), typeof(HotkeyService));
+            Locator.CurrentMutable.RegisterConstant(new ScreenshotService(), typeof(ScreenshotService));
+            Locator.CurrentMutable.RegisterConstant(new EffectService(), typeof(EffectService));
 
+            Locator.CurrentMutable.RegisterConstant(new MainWindowView(), typeof(MainWindowView));
             Locator.CurrentMutable.RegisterConstant(FindResource("NotifyIcon"), typeof(TaskbarIcon));
         }
-
+        
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);

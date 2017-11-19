@@ -4,10 +4,11 @@
                     xmlns:viewModels="clr-namespace:Shadowshot.ViewModels">
     <tb:TaskbarIcon x:Key="NotifyIcon" IconSource="../Icon.ico" ToolTipText="Shadowshot">
         <tb:TaskbarIcon.DataContext>
-            <viewModels:NotifyIcon />
+            <viewModels:NotifyIconViewModel />
         </tb:TaskbarIcon.DataContext>
         <tb:TaskbarIcon.ContextMenu>
             <ContextMenu>
+                <MenuItem Header="Settings" Command="{Binding SettingsCommand}"/>
                 <Separator />
                 <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
             </ContextMenu>
