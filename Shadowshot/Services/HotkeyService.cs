@@ -21,11 +21,19 @@ namespace Shadowshot.Services
     {
         private Dictionary<Operation, HotkeyModel> _hotkeys;
 
-        private readonly string _hotkeysPath =
-            Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? string.Empty, "Hotkeys.json");
+        private readonly string _hotkeysPath;
 
         internal HotkeyService()
         {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var appName = Assembly.GetEntryAssembly().GetName().Name;
+            var configFolderPath = Path.Combine(appDataPath, appName);
+
+            if (!Directory.Exists(configFolderPath))
+                Directory.CreateDirectory(configFolderPath);
+
+            _hotkeysPath = Path.Combine(configFolderPath, "Hotkeys.json");
+
             if (!File.Exists(_hotkeysPath))
             {
                 _hotkeys = new Dictionary<Operation, HotkeyModel>
