@@ -23,6 +23,7 @@ namespace Shadowshot.ViewModels
             _hotkeyService.UnregisterHotKey();
 
             IsAutoStart = _autoStartService.IsEnabled;
+            IsAutoStartEnabled = !_autoStartService.IsDisabledByUser;
 
             _hotkeys = _hotkeyService.Hotkeys;
 
@@ -31,7 +32,6 @@ namespace Shadowshot.ViewModels
                 _autoStartService.IsEnabled = IsAutoStart;
 
                 _hotkeyService.Hotkeys = _hotkeys;
-                _hotkeyService.RegisterHotKey();
 
                 RequestClose?.Invoke();
             });
@@ -39,7 +39,14 @@ namespace Shadowshot.ViewModels
             CancelCommand = ReactiveCommand.Create(() => RequestClose?.Invoke());
         }
 
+        ~SettingsViewModel()
+        {
+            _hotkeyService.RegisterHotKey();
+        }
+
         public bool IsAutoStart { get; set; }
+
+        public bool IsAutoStartEnabled { get; }
 
         public string EntireScreenToDesktopHotkeyText
         {

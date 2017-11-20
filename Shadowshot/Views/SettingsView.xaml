@@ -19,7 +19,7 @@
             <StackPanel>
                 <GroupBox Header="General" Margin="0,0,0,11">
                     <StackPanel Margin="3,5,3,3">
-                        <CheckBox Height="17" IsChecked="{Binding IsAutoStart}">Launch shadowshot when system starts</CheckBox>
+                        <CheckBox Height="17" IsChecked="{Binding IsAutoStart}" IsEnabled="{Binding IsAutoStartEnabled}">Launch shadowshot when system starts</CheckBox>
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Keyboard Shortcuts">
