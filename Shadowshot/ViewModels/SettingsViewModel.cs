@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reactive;
+using System.Windows;
 using System.Windows.Input;
 using ReactiveUI;
 using Shadowshot.Models;
@@ -39,11 +40,6 @@ namespace Shadowshot.ViewModels
             CancelCommand = ReactiveCommand.Create(() => RequestClose?.Invoke());
         }
 
-        ~SettingsViewModel()
-        {
-            _hotkeyService.RegisterHotKey();
-        }
-
         public bool IsAutoStart { get; set; }
 
         public bool IsAutoStartEnabled { get; }
@@ -78,6 +74,11 @@ namespace Shadowshot.ViewModels
 
         internal event Action RequestClose;
 
+        internal void OnViewClosing(object sender, CancelEventArgs e)
+        {
+            _hotkeyService.RegisterHotKey();
+        }
+
         private static string HotkeyToString(HotkeyModel value)
         {
             var modifierKeysConverter = TypeDescriptor.GetConverter(typeof(ModifierKeys));
@@ -94,12 +95,12 @@ namespace Shadowshot.ViewModels
             var index = text.LastIndexOf('+');
             var modifierKeysText = text.Substring(0, index);
             var keyText = text.Substring(index + 1);
-            
+
             var modifierKeysConverter = TypeDescriptor.GetConverter(typeof(ModifierKeys));
-            var modifierKeys = (ModifierKeys)modifierKeysConverter.ConvertFromString(modifierKeysText);
+            var modifierKeys = (ModifierKeys) modifierKeysConverter.ConvertFromString(modifierKeysText);
 
             var keyConverter = TypeDescriptor.GetConverter(typeof(Key));
-            var key = (Key)keyConverter.ConvertFromString(keyText);
+            var key = (Key) keyConverter.ConvertFromString(keyText);
 
             return new HotkeyModel
             {

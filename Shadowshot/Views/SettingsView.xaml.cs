@@ -48,6 +48,8 @@ namespace Shadowshot.Views
         {
             var viewModel = (SettingsViewModel) DataContext;
             viewModel.RequestClose += Close;
+
+            Closing += viewModel.OnViewClosing;
         }
     }
 }
