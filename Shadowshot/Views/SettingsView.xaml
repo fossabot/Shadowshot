@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:Shadowshot.ViewModels"
         mc:Ignorable="d"
-        Title="Settings" Height="405" Width="540"
+        ResizeMode="NoResize" SizeToContent="WidthAndHeight" Title="Settings"
         DataContextChanged="OnDataContextChanged">
     <Window.DataContext>
         <viewModels:SettingsViewModel />
@@ -16,7 +16,7 @@
                 <Button Width="75" Height="23" Margin="0,0,7,0" Command="{Binding OkCommand}">OK</Button>
                 <Button Width="75" Height="23" Command="{Binding CancelCommand}">Cancel</Button>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Margin="0,0,0,11">
                 <GroupBox Header="General" Margin="0,0,0,11">
                     <StackPanel Margin="3,5,3,3">
                         <CheckBox Height="17" IsChecked="{Binding IsAutoStart}" IsEnabled="{Binding IsAutoStartEnabled}">Launch shadowshot when system starts</CheckBox>
