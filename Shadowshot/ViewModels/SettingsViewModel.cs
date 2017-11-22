@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reactive;
-using System.Windows;
 using System.Windows.Input;
 using ReactiveUI;
 using Shadowshot.Models;
