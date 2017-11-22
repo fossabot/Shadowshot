@@ -132,11 +132,13 @@ namespace Shadowshot.Services
                 case Operation.EntireScreenToClipboard:
                 case Operation.ActiveWindowToClipboard:
                     using (var bitmapWithBackground = new Bitmap(bitmap.Width, bitmap.Height))
-                    using (var graphics = Graphics.FromImage(bitmapWithBackground))
                     {
-                        graphics.Clear(Color.White);
-                        graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
-                        var hBitmap = bitmap.GetHbitmap();
+                        using (var graphics = Graphics.FromImage(bitmapWithBackground))
+                        {
+                            graphics.Clear(Color.White);
+                            graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
+                        }
+                        var hBitmap = bitmapWithBackground.GetHbitmap();
                         var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
                             hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                         NativeMethods.DeleteObject(hBitmap);
