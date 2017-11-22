@@ -11,9 +11,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
-using static System.Windows.Input.Key;
-using static System.Windows.Input.ModifierKeys;
-using static Shadowshot.Services.HotkeyService.Operation;
 
 namespace Shadowshot.Services
 {
@@ -39,35 +36,35 @@ namespace Shadowshot.Services
                 _hotkeys = new Dictionary<Operation, HotkeyModel>
                 {
                     {
-                        EntireScreenToDesktop,
+                        Operation.EntireScreenToDesktop,
                         new HotkeyModel
                         {
-                            ModifierKeys = Alt | Shift,
-                            Key = D3
+                            ModifierKeys = ModifierKeys.Alt | ModifierKeys.Shift,
+                            Key = Key.D3
                         }
                     },
                     {
-                        ActiveWindowToDesktop,
+                        Operation.ActiveWindowToDesktop,
                         new HotkeyModel
                         {
-                            ModifierKeys = Alt | Shift,
-                            Key = D4
+                            ModifierKeys = ModifierKeys.Alt | ModifierKeys.Shift,
+                            Key = Key.D4
                         }
                     },
                     {
-                        EntireScreenToClipboard,
+                        Operation.EntireScreenToClipboard,
                         new HotkeyModel
                         {
-                            ModifierKeys = Control | Alt | Shift,
-                            Key = D3
+                            ModifierKeys = ModifierKeys.Control | ModifierKeys.Alt | ModifierKeys.Shift,
+                            Key = Key.D3
                         }
                     },
                     {
-                        ActiveWindowToClipboard,
+                        Operation.ActiveWindowToClipboard,
                         new HotkeyModel
                         {
-                            ModifierKeys = Control | Alt | Shift,
-                            Key = D4
+                            ModifierKeys = ModifierKeys.Control | ModifierKeys.Alt | ModifierKeys.Shift,
+                            Key = Key.D4
                         }
                     }
                 };
@@ -75,7 +72,8 @@ namespace Shadowshot.Services
                 return;
             }
 
-            _hotkeys = JsonConvert.DeserializeObject<Dictionary<Operation, HotkeyModel>>(File.ReadAllText(_hotkeysPath));
+            _hotkeys =
+                JsonConvert.DeserializeObject<Dictionary<Operation, HotkeyModel>>(File.ReadAllText(_hotkeysPath));
         }
 
         internal Dictionary<Operation, HotkeyModel> Hotkeys
@@ -108,12 +106,12 @@ namespace Shadowshot.Services
             Bitmap bitmap;
             switch (operation)
             {
-                case EntireScreenToDesktop:
-                case EntireScreenToClipboard:
+                case Operation.EntireScreenToDesktop:
+                case Operation.EntireScreenToClipboard:
                     bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureEntireScreen();
                     break;
-                case ActiveWindowToDesktop:
-                case ActiveWindowToClipboard:
+                case Operation.ActiveWindowToDesktop:
+                case Operation.ActiveWindowToClipboard:
                     bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureActiveWindow();
                     break;
                 default:
@@ -124,20 +122,26 @@ namespace Shadowshot.Services
 
             switch (operation)
             {
-                case EntireScreenToDesktop:
-                case ActiveWindowToDesktop:
+                case Operation.EntireScreenToDesktop:
+                case Operation.ActiveWindowToDesktop:
                     var dateTime = DateTime.Now;
                     bitmap.Save(
                         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                             $"Screen Shot {dateTime:yyyy-MM-dd} at {dateTime:h.mm.ss tt}.png"));
                     break;
-                case EntireScreenToClipboard:
-                case ActiveWindowToClipboard:
-                    var hBitmap = bitmap.GetHbitmap();
-                    var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(hBitmap,
-                        IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                    NativeMethods.DeleteObject(hBitmap);
-                    Clipboard.SetImage(bitmapSource);
+                case Operation.EntireScreenToClipboard:
+                case Operation.ActiveWindowToClipboard:
+                    using (var bitmapWithBackground = new Bitmap(bitmap.Width, bitmap.Height))
+                    using (var graphics = Graphics.FromImage(bitmapWithBackground))
+                    {
+                        graphics.Clear(Color.White);
+                        graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
+                        var hBitmap = bitmap.GetHbitmap();
+                        var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+                            hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                        NativeMethods.DeleteObject(hBitmap);
+                        Clipboard.SetImage(bitmapSource);
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
