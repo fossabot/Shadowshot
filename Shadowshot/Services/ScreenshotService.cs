@@ -10,8 +10,8 @@ namespace Shadowshot.Services
         internal Bitmap CaptureEntireScreen()
         {
             return CaptureRect(new Rectangle(
-                (int)SystemParameters.VirtualScreenLeft, (int)SystemParameters.VirtualScreenTop,
-                (int)SystemParameters.VirtualScreenWidth, (int)SystemParameters.VirtualScreenHeight));
+                (int) SystemParameters.VirtualScreenLeft, (int) SystemParameters.VirtualScreenTop,
+                (int) SystemParameters.VirtualScreenWidth, (int) SystemParameters.VirtualScreenHeight));
         }
 
         internal Bitmap CaptureActiveWindow()
@@ -20,9 +20,9 @@ namespace Shadowshot.Services
             NativeMethods.DwmGetWindowAttribute(handle, NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
                 out var rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
             NativeMethods.GetWindowInfo(handle, out var windowInfo);
-            var rectangle = new Rectangle(rect.Left, rect.Top, rect.Right, rect.Bottom);
+            var rectangle = Rectangle.FromLTRB(rect.Left, rect.Top, rect.Right, rect.Bottom);
             if (NativeMethods.IsZoomed(handle) && rectangle.Left < 0 && rectangle.Top < 0)
-                rectangle.Inflate((int)-windowInfo.cxWindowBorders, (int)-windowInfo.cyWindowBorders);
+                rectangle.Inflate((int) -windowInfo.cxWindowBorders, (int) -windowInfo.cyWindowBorders);
             return CaptureRect(rectangle);
         }
 
