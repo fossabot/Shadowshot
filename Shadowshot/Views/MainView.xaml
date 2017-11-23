@@ -1,11 +1,15 @@
-﻿<Window x:Uid="Window_1" x:Class="Shadowshot.Views.MainWindowView"
+﻿<Window x:Class="Shadowshot.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
         xmlns:viewModels="clr-namespace:Shadowshot.ViewModels"
-        mc:Ignorable="d">
+        mc:Ignorable="d"
+        lex:LocalizeDictionary.DesignCulture="en-US"
+        lex:ResxLocalizationProvider.DefaultAssembly="Shadowshot"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings">
     <Window.DataContext>
-        <viewModels:MainViewModel x:Uid="viewModels:MainViewModel_1" />
+        <viewModels:MainViewModel />
     </Window.DataContext>
 </Window>

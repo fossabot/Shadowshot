@@ -1,8 +1,11 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
+﻿using System.Globalization;
+using Hardcodet.Wpf.TaskbarNotification;
 using Shadowshot.Services;
 using Shadowshot.Views;
 using Splat;
 using System.Windows;
+using Shadowshot.Properties;
+using WPFLocalizeExtension.Engine;
 
 namespace Shadowshot
 {
@@ -14,7 +17,9 @@ namespace Shadowshot
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            
+
+            LocalizeDictionary.Instance.Culture = CultureInfo.CurrentUICulture;
+
             Locator.CurrentMutable.RegisterConstant(new AutoStartService(), typeof(AutoStartService));
             Locator.CurrentMutable.RegisterConstant(new HotkeyService(), typeof(HotkeyService));
             Locator.CurrentMutable.RegisterConstant(new ScreenshotService(), typeof(ScreenshotService));

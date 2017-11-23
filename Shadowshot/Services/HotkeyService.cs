@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
+using WPFLocalizeExtension.Extensions;
 
 namespace Shadowshot.Services
 {
@@ -125,9 +126,10 @@ namespace Shadowshot.Services
                 case Operation.EntireScreenToDesktop:
                 case Operation.ActiveWindowToDesktop:
                     var dateTime = DateTime.Now;
-                    bitmap.Save(
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                            $"Screen Shot {dateTime:yyyy-MM-dd} at {dateTime:h.mm.ss tt}.png"));
+                    var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    var filenameFormat = LocExtension.GetLocalizedValue<string>("Strings:FilenameFormat");
+                    var filename = string.Format(filenameFormat, dateTime);
+                    bitmap.Save(Path.Combine(desktopPath, filename));
                     break;
                 case Operation.EntireScreenToClipboard:
                 case Operation.ActiveWindowToClipboard:
