@@ -2,13 +2,13 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fnhave3usxa1sn1i/branch/master?svg=true)](https://ci.appveyor.com/project/victoriqueko/shadowshot/branch/master)
 
-A screenshot tool with shadow.
+Take a screenshot with drop shadow.
 
-![Example screenshot of Shadowshot](https://user-images.githubusercontent.com/4309091/29003609-903ff666-7aec-11e7-9d61-07e6d1352c31.png)
+![Screenshot example of Shadowshot](https://user-images.githubusercontent.com/4309091/33182647-c9f5b9e0-d0af-11e7-968f-40e4bbcc4e17.png)
 
 ## Usage
 
-| Operation                                                | Hotkey                                                             |
+| Operation                                                | Keyboard Shortcuts                                                 |
 | -------------------------------------------------------- | ------------------------------------------------------------------ |
 | Take a screenshot of entire screen and save to desktop   | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd>                   |
 | Take a screenshot of active window and save to desktop   | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>                   |
