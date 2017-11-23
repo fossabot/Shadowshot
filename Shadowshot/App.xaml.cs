@@ -4,7 +4,6 @@ using Shadowshot.Services;
 using Shadowshot.Views;
 using Splat;
 using System.Windows;
-using Shadowshot.Properties;
 using WPFLocalizeExtension.Engine;
 
 namespace Shadowshot

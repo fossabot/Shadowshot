@@ -24,7 +24,8 @@ namespace Shadowshot.Services.Win32
         internal static extern bool GetWindowInfo(IntPtr hwnd, out WindowInfo pwi);
 
         [DllImport("dwmapi.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        internal static extern int DwmGetWindowAttribute(IntPtr hwnd, DwmWindowAttribute dwAttribute, out Rect pvAttribute, int cbAttribute);
+        internal static extern int DwmGetWindowAttribute(
+            IntPtr hwnd, DwmWindowAttribute dwAttribute, out Rect pvAttribute, int cbAttribute);
 
         [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
         internal static extern bool DeleteObject(IntPtr hObject);

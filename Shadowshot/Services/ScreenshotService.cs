@@ -1,7 +1,7 @@
-﻿using Shadowshot.Services.Win32;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows;
+using Shadowshot.Services.Win32;
 
 namespace Shadowshot.Services
 {
@@ -17,7 +17,8 @@ namespace Shadowshot.Services
         internal Bitmap CaptureActiveWindow()
         {
             var handle = NativeMethods.GetForegroundWindow();
-            NativeMethods.DwmGetWindowAttribute(handle, NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
+            NativeMethods.DwmGetWindowAttribute(
+                handle, NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
                 out var rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
             NativeMethods.GetWindowInfo(handle, out var windowInfo);
             var rectangle = Rectangle.FromLTRB(rect.Left, rect.Top, rect.Right, rect.Bottom);

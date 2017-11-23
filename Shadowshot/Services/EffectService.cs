@@ -83,8 +83,8 @@ namespace Shadowshot.Services
 
         private static void GaussianBlur(Bitmap bitmap, int radius)
         {
-            var data = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
-                ImageLockMode.ReadWrite, bitmap.PixelFormat);
+            var rect = new Rectangle(Point.Empty, bitmap.Size);
+            var data = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
             var bytes = new int[Math.Abs(data.Stride) * data.Height / 4];
             Marshal.Copy(data.Scan0, bytes, 0, bytes.Length);
 
@@ -130,9 +130,9 @@ namespace Shadowshot.Services
                     blue[i + j * data.Width] = 255;
 
                 bytes[i + j * Math.Abs(data.Stride) / 4] =
-                    alpha[i + j * data.Width] << 24 |
-                    red[i + j * data.Width] << 16 |
-                    green[i + j * data.Width] << 8 |
+                    (alpha[i + j * data.Width] << 24) |
+                    (red[i + j * data.Width] << 16) |
+                    (green[i + j * data.Width] << 8) |
                     blue[i + j * data.Width];
             }
 

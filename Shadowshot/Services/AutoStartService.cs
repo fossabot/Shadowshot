@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using Microsoft.Win32;
 using Windows.ApplicationModel;
 using DesktopBridge;
-using static Windows.ApplicationModel.StartupTaskState;
+using Microsoft.Win32;
 
 namespace Shadowshot.Services
 {
@@ -11,6 +10,7 @@ namespace Shadowshot.Services
     {
         private const string RegistryKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
         private const string RegistryKeyName = "Shadowshot";
+        private const string StartupTaskId = "ShadowshotAutoStart";
 
         private readonly Helpers _helpers = new Helpers();
 
@@ -20,9 +20,9 @@ namespace Shadowshot.Services
         {
             if (_helpers.IsRunningAsUwp())
             {
-                var startupTask = StartupTask.GetAsync("ShadowshotAutoStart").AsTask().Result;
-                _isEnabled = startupTask.State == Enabled;
-                IsDisabledByUser = startupTask.State == DisabledByUser;
+                var startupTask = StartupTask.GetAsync(StartupTaskId).AsTask().Result;
+                _isEnabled = startupTask.State == StartupTaskState.Enabled;
+                IsDisabledByUser = startupTask.State == StartupTaskState.DisabledByUser;
             }
             else
             {
@@ -50,12 +50,12 @@ namespace Shadowshot.Services
             {
                 if (_helpers.IsRunningAsUwp())
                 {
-                    var startupTask = StartupTask.GetAsync("ShadowshotAutoStart").AsTask().Result;
+                    var startupTask = StartupTask.GetAsync(StartupTaskId).AsTask().Result;
                     if (value)
                     {
                         var state = startupTask.RequestEnableAsync().AsTask().Result;
-                        _isEnabled = state == Enabled;
-                        IsDisabledByUser = state == DisabledByUser;
+                        _isEnabled = state == StartupTaskState.Enabled;
+                        IsDisabledByUser = state == StartupTaskState.DisabledByUser;
                     }
                     else
                     {

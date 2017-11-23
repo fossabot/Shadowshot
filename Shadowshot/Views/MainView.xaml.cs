@@ -1,5 +1,5 @@
-﻿using Shadowshot.ViewModels;
-using System.Windows.Interop;
+﻿using System.Windows.Interop;
+using Shadowshot.ViewModels;
 
 namespace Shadowshot.Views
 {

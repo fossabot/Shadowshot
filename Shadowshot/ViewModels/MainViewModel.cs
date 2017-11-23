@@ -1,9 +1,9 @@
-﻿using ReactiveUI;
+﻿using System;
+using System.Windows.Interop;
+using ReactiveUI;
 using Shadowshot.Services;
 using Shadowshot.Services.Win32;
 using Splat;
-using System;
-using System.Windows.Interop;
 
 namespace Shadowshot.ViewModels
 {
@@ -11,16 +11,10 @@ namespace Shadowshot.ViewModels
     {
         private readonly HotkeyService _hotkeyService = Locator.CurrentMutable.GetService<HotkeyService>();
 
-        internal MainViewModel()
-        {
-        }
-
         internal void RegisterHotkey(IntPtr handle)
         {
             var source = HwndSource.FromHwnd(handle);
-            if (source == null)
-                return;
-            source.AddHook(WndProc);
+            source?.AddHook(WndProc);
             _hotkeyService.Handle = handle;
             _hotkeyService.RegisterHotKey();
         }
@@ -29,10 +23,10 @@ namespace Shadowshot.ViewModels
         {
             if (msg == NativeMethods.WmHotkey)
             {
-                _hotkeyService.HandleHotkey((HotkeyService.Operation)wParam.ToInt32());
+                _hotkeyService.HandleHotkey((HotkeyService.Operation) wParam.ToInt32());
                 handled = true;
             }
-            
+
             return IntPtr.Zero;
         }
     }

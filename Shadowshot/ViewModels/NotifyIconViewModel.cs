@@ -1,7 +1,7 @@
-﻿using ReactiveUI;
-using Shadowshot.Views;
-using System.Reactive;
+﻿using System.Reactive;
 using System.Windows;
+using ReactiveUI;
+using Shadowshot.Views;
 
 namespace Shadowshot.ViewModels
 {

@@ -14,7 +14,8 @@ namespace Shadowshot.Views
         {
             InitializeComponent();
 
-            var hotkeyTextBoxList = new[] {
+            var hotkeyTextBoxList = new[]
+            {
                 EntireScreenToDesktopHotkeyTextBox,
                 ActiveWindowToDesktopHotkeyTextBox,
                 EntireScreenToClipboardHotkeyTextBox,
@@ -22,7 +23,6 @@ namespace Shadowshot.Views
             };
 
             foreach (var textBox in hotkeyTextBoxList)
-            {
                 textBox.PreviewKeyDown += (sender, args) =>
                 {
                     args.Handled = true;
@@ -41,7 +41,6 @@ namespace Shadowshot.Views
 
                     textBox.Text = $"{modifierKeysText}+{keyText}";
                 };
-            }
         }
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

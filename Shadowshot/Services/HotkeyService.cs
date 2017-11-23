@@ -1,8 +1,4 @@
-﻿using Newtonsoft.Json;
-using Shadowshot.Models;
-using Shadowshot.Services.Win32;
-using Splat;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -11,15 +7,18 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
+using Newtonsoft.Json;
+using Shadowshot.Models;
+using Shadowshot.Services.Win32;
+using Splat;
 using WPFLocalizeExtension.Extensions;
 
 namespace Shadowshot.Services
 {
     internal class HotkeyService
     {
-        private Dictionary<Operation, HotkeyModel> _hotkeys;
-
         private readonly string _hotkeysPath;
+        private Dictionary<Operation, HotkeyModel> _hotkeys;
 
         internal HotkeyService()
         {

@@ -14,9 +14,9 @@ namespace Shadowshot.ViewModels
     internal class SettingsViewModel : ReactiveObject
     {
         private readonly AutoStartService _autoStartService = Locator.CurrentMutable.GetService<AutoStartService>();
-        private readonly HotkeyService _hotkeyService = Locator.CurrentMutable.GetService<HotkeyService>();
 
         private readonly Dictionary<HotkeyService.Operation, HotkeyModel> _hotkeys;
+        private readonly HotkeyService _hotkeyService = Locator.CurrentMutable.GetService<HotkeyService>();
 
         internal SettingsViewModel()
         {
