@@ -10,7 +10,7 @@ namespace Shadowshot.Services
     {
         private const string RegistryKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
         private const string RegistryKeyName = "Shadowshot";
-        private const string StartupTaskId = "ShadowshotAutoStart";
+        private const string StartupTaskId = "ShadowshotStartupTask";
 
         private readonly Helpers _helpers = new Helpers();
 

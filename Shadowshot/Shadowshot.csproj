@@ -82,6 +82,8 @@
     </Reference>
     <Reference Include="System.Runtime.InteropServices.WindowsRuntime" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
@@ -90,8 +92,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.UI.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -100,14 +100,16 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.15063.0\Windows.ApplicationModel.StartupTaskContract\1.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.16299.0\Windows.ApplicationModel.StartupTaskContract\2.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Windows.Foundation.FoundationContract">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Windows.Foundation.UniversalApiContract">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.UniversalApiContract\4.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.16299.0\Windows.Foundation.UniversalApiContract\5.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
