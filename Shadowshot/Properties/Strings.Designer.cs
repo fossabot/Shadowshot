@@ -61,6 +61,15 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Take a screenshot of active window and save to clipboard:.
         /// </summary>
         public static string ActiveWindowToClipboard {
@@ -151,6 +160,15 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copyright 2017 Victorique Ko. All rights reserved..
+        /// </summary>
+        public static string License {
+            get {
+                return ResourceManager.GetString("License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string OK {
@@ -174,6 +192,15 @@ namespace Shadowshot.Properties {
         public static string Shadowshot {
             get {
                 return ResourceManager.GetString("Shadowshot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version {0}.
+        /// </summary>
+        public static string VersionFormat {
+            get {
+                return ResourceManager.GetString("VersionFormat", resourceCulture);
             }
         }
     }

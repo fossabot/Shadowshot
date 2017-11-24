@@ -137,12 +137,20 @@
     <Compile Include="Services\HotkeyService.cs" />
     <Compile Include="Services\ScreenshotService.cs" />
     <Compile Include="Services\Win32\NativeMethods.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NotifyIconViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

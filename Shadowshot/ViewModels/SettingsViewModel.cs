@@ -21,7 +21,6 @@ using ReactiveUI;
 using Shadowshot.Models;
 using Shadowshot.Services;
 using Splat;
-using static Shadowshot.Services.HotkeyService.Operation;
 
 namespace Shadowshot.ViewModels
 {
@@ -59,26 +58,26 @@ namespace Shadowshot.ViewModels
 
         public string EntireScreenToDesktopHotkeyText
         {
-            get => HotkeyToString(_hotkeys[EntireScreenToDesktop]);
-            set => _hotkeys[EntireScreenToDesktop] = StringToHotkey(value);
+            get => HotkeyToString(_hotkeys[HotkeyService.Operation.EntireScreenToDesktop]);
+            set => _hotkeys[HotkeyService.Operation.EntireScreenToDesktop] = StringToHotkey(value);
         }
 
         public string ActiveWindowToDesktopHotkeyText
         {
-            get => HotkeyToString(_hotkeys[ActiveWindowToDesktop]);
-            set => _hotkeys[ActiveWindowToDesktop] = StringToHotkey(value);
+            get => HotkeyToString(_hotkeys[HotkeyService.Operation.ActiveWindowToDesktop]);
+            set => _hotkeys[HotkeyService.Operation.ActiveWindowToDesktop] = StringToHotkey(value);
         }
 
         public string EntireScreenToClipboardHotkeyText
         {
-            get => HotkeyToString(_hotkeys[EntireScreenToClipboard]);
-            set => _hotkeys[EntireScreenToClipboard] = StringToHotkey(value);
+            get => HotkeyToString(_hotkeys[HotkeyService.Operation.EntireScreenToClipboard]);
+            set => _hotkeys[HotkeyService.Operation.EntireScreenToClipboard] = StringToHotkey(value);
         }
 
         public string ActiveWindowToClipboardHotkeyText
         {
-            get => HotkeyToString(_hotkeys[ActiveWindowToClipboard]);
-            set => _hotkeys[ActiveWindowToClipboard] = StringToHotkey(value);
+            get => HotkeyToString(_hotkeys[HotkeyService.Operation.ActiveWindowToClipboard]);
+            set => _hotkeys[HotkeyService.Operation.ActiveWindowToClipboard] = StringToHotkey(value);
         }
 
         public ReactiveCommand<Unit, Unit> OkCommand { get; }

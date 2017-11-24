@@ -123,6 +123,9 @@
   <data name="Settings" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>退出</value>
   </data>
@@ -155,5 +158,11 @@
   </data>
   <data name="FilenameFormat" xml:space="preserve">
     <value>屏幕快照 {0:yyyy-MM-dd} {0:h.mm.ss tt}.png</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>版本 {0}</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>版权所有 2017 Victorique Ko。保留所有权利。</value>
   </data>
 </root>

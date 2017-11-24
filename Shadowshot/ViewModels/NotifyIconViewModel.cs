@@ -29,10 +29,18 @@ namespace Shadowshot.ViewModels
                 view.ShowDialog();
             });
 
+            AboutCommand = ReactiveCommand.Create(() =>
+            {
+                var view = new AboutView();
+                view.ShowDialog();
+            });
+
             ExitCommand = ReactiveCommand.Create(() => Application.Current.Shutdown());
         }
 
         public ReactiveCommand<Unit, Unit> SettingsCommand { get; }
+
+        public ReactiveCommand<Unit, Unit> AboutCommand { get; }
 
         public ReactiveCommand<Unit, Unit> ExitCommand { get; }
     }
