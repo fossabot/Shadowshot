@@ -1,4 +1,4 @@
-﻿// Copyright 2017 Victorique Ko
+﻿// Copyright 2017 Kagami Studio
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using System.Drawing;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 using Shadowshot.Services.Win32;
@@ -23,9 +25,18 @@ namespace Shadowshot.Services
     {
         internal Bitmap CaptureEntireScreen()
         {
+            var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
+            var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
+
+            if (dpiXProperty == null || dpiYProperty == null)
+                throw new NullReferenceException();
+
+            var dpiX = (int) dpiXProperty.GetValue(null);
+            var dpiY = (int) dpiYProperty.GetValue(null);
+
             return CaptureRect(new Rectangle(
                 (int) SystemParameters.VirtualScreenLeft, (int) SystemParameters.VirtualScreenTop,
-                (int) SystemParameters.VirtualScreenWidth, (int) SystemParameters.VirtualScreenHeight));
+                (int) SystemParameters.VirtualScreenWidth * dpiX / 96, (int) SystemParameters.VirtualScreenHeight * dpiY / 96));
         }
 
         internal Bitmap CaptureActiveWindow()
