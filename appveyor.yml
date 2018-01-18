@@ -4,6 +4,3 @@ image: Visual Studio 2017
 
 install:
   - ps: nuget restore
-
-build:
-  verbosity: detailed
