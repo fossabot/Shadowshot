@@ -4,7 +4,7 @@
 
 ## What is Shadowshot?
 
-Take a screenshot with drop shadow.
+Utility that lets you take a screenshot with the drop shadow.
 
 ![Screenshot Example](https://user-images.githubusercontent.com/4309091/33182647-c9f5b9e0-d0af-11e7-968f-40e4bbcc4e17.png)
 
