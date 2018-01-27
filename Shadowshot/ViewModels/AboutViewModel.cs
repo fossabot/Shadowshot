@@ -16,7 +16,7 @@ using System;
 using System.Reactive;
 using System.Reflection;
 using ReactiveUI;
-using WPFLocalizeExtension.Extensions;
+using Shadowshot.Properties;
 
 namespace Shadowshot.ViewModels
 {
@@ -26,8 +26,7 @@ namespace Shadowshot.ViewModels
         {
             var assembly = Assembly.GetEntryAssembly();
             var name = assembly.GetName();
-            var versionFormat = LocExtension.GetLocalizedValue<string>("Strings:VersionFormat");
-            Version = string.Format(versionFormat, name.Version.ToString(3));
+            Version = string.Format(Strings.VersionFormat, name.Version.ToString(3));
 
             OkCommand = ReactiveCommand.Create(() => RequestClose?.Invoke());
         }

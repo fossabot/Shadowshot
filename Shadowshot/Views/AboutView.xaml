@@ -19,13 +19,10 @@ limitations under the License.
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lex="http://wpflocalizeextension.codeplex.com"
         xmlns:viewModels="clr-namespace:Shadowshot.ViewModels"
+        xmlns:local="clr-namespace:Shadowshot.Properties"
         mc:Ignorable="d"
-        lex:LocalizeDictionary.DesignCulture="en-US"
-        lex:ResxLocalizationProvider.DefaultAssembly="Shadowshot"
-        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-        Title="{lex:Loc About}" MinWidth="360" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        Title="{x:Static local:Strings.About}" MinWidth="360" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
         DataContextChanged="OnDataContextChanged">
     <Window.DataContext>
         <viewModels:AboutViewModel />
@@ -33,13 +30,13 @@ limitations under the License.
     <Grid Background="#FFF0F0F0">
         <DockPanel Margin="11">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="75" Height="23" Margin="0,0,7,0" Content="{lex:Loc OK}" Command="{Binding OkCommand}" />
+                <Button Width="75" Height="23" Margin="0,0,7,0" Content="{x:Static local:Strings.OK}" Command="{Binding OkCommand}" />
             </StackPanel>
             <StackPanel Margin="0,0,0,11">
                 <StackPanel Margin="0,0,0,11">
                     <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
                         <Image Margin="0,0,5,0" Width="64" Source="/Shadowshot;component/Icon.ico" />
-                        <TextBlock VerticalAlignment="Center" FontSize="24" Text="{lex:Loc Shadowshot}" />
+                        <TextBlock VerticalAlignment="Center" FontSize="24" Text="{x:Static local:Strings.Shadowshot}" />
                     </StackPanel>
                     <StackPanel>
                         <TextBlock Text="{Binding Version}" />
@@ -47,7 +44,7 @@ limitations under the License.
                 </StackPanel>
                 <Separator Margin="0,0,0,11" />
                 <StackPanel>
-                    <TextBlock Text="{lex:Loc License}" />
+                    <TextBlock Text="{x:Static local:Strings.License}" />
                 </StackPanel>
             </StackPanel>
         </DockPanel>

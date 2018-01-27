@@ -19,13 +19,10 @@ limitations under the License.
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lex="http://wpflocalizeextension.codeplex.com"
         xmlns:viewModels="clr-namespace:Shadowshot.ViewModels"
+        xmlns:local="clr-namespace:Shadowshot.Properties"
         mc:Ignorable="d"
-        lex:LocalizeDictionary.DesignCulture="en-US"
-        lex:ResxLocalizationProvider.DefaultAssembly="Shadowshot"
-        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-        Title="{lex:Loc Settings}" MinWidth="450" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        Title="{x:Static local:Strings.Settings}" MinWidth="450" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
         DataContextChanged="OnDataContextChanged">
     <Window.DataContext>
         <viewModels:SettingsViewModel />
@@ -33,39 +30,39 @@ limitations under the License.
     <Grid Background="#FFF0F0F0">
         <DockPanel Margin="11">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="75" Height="23" Margin="0,0,7,0" Content="{lex:Loc OK}" Command="{Binding OkCommand}" />
-                <Button Width="75" Height="23" Content="{lex:Loc Cancel}" Command="{Binding CancelCommand}" />
+                <Button Width="75" Height="23" Margin="0,0,7,0" Content="{x:Static local:Strings.OK}" Command="{Binding OkCommand}" />
+                <Button Width="75" Height="23" Content="{x:Static local:Strings.Cancel}" Command="{Binding CancelCommand}" />
             </StackPanel>
             <StackPanel Margin="0,0,0,11">
-                <GroupBox Header="{lex:Loc General}" Margin="0,0,0,11">
+                <GroupBox Header="{x:Static local:Strings.General}" Margin="0,0,0,11">
                     <StackPanel Margin="3,5,3,3">
-                        <CheckBox Height="17" Content="{lex:Loc IsAutoStart}"
+                        <CheckBox Height="17" Content="{x:Static local:Strings.IsAutoStart}"
                                   IsChecked="{Binding IsAutoStart}"
                                   IsEnabled="{Binding IsAutoStartEnabled}" />
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Header="{lex:Loc KeyboardShortcuts}">
+                <GroupBox Header="{x:Static local:Strings.KeyboardShortcuts}">
                     <StackPanel Margin="3,5,3,3">
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{lex:Loc EntireScreenToDesktop}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToDesktop}" />
                             <TextBox x:Name="EntireScreenToDesktopHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding EntireScreenToDesktopHotkeyText}" />
                         </StackPanel>
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{lex:Loc ActiveWindowToDesktop}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToDesktop}" />
                             <TextBox x:Name="ActiveWindowToDesktopHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding ActiveWindowToDesktopHotkeyText}" />
                         </StackPanel>
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{lex:Loc EntireScreenToClipboard}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToClipboard}" />
                             <TextBox x:Name="EntireScreenToClipboardHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding EntireScreenToClipboardHotkeyText}" />
                         </StackPanel>
                         <StackPanel>
-                            <TextBlock Margin="0,0,0,5" Text="{lex:Loc ActiveWindowToClipboard}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToClipboard}" />
                             <TextBox x:Name="ActiveWindowToClipboardHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding ActiveWindowToClipboardHotkeyText}" />

@@ -18,7 +18,7 @@ using Shadowshot.Services;
 using Shadowshot.Views;
 using Splat;
 using System.Windows;
-using WPFLocalizeExtension.Engine;
+using Shadowshot.Properties;
 
 namespace Shadowshot
 {
@@ -31,7 +31,7 @@ namespace Shadowshot
         {
             base.OnStartup(e);
 
-            LocalizeDictionary.Instance.Culture = CultureInfo.CurrentUICulture;
+            Strings.Culture = CultureInfo.CurrentUICulture;
 
             Locator.CurrentMutable.RegisterConstant(new AutoStartService(), typeof(AutoStartService));
             Locator.CurrentMutable.RegisterConstant(new HotkeyService(), typeof(HotkeyService));

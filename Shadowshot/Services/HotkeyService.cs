@@ -23,9 +23,9 @@ using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using Shadowshot.Models;
+using Shadowshot.Properties;
 using Shadowshot.Services.Win32;
 using Splat;
-using WPFLocalizeExtension.Extensions;
 
 namespace Shadowshot.Services
 {
@@ -100,7 +100,7 @@ namespace Shadowshot.Services
             }
         }
 
-        internal IntPtr Handle { get; set; }
+        internal IntPtr Handle { private get; set; }
 
         internal void RegisterHotKey()
         {
@@ -140,8 +140,7 @@ namespace Shadowshot.Services
                 case Operation.ActiveWindowToDesktop:
                     var dateTime = DateTime.Now;
                     var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    var filenameFormat = LocExtension.GetLocalizedValue<string>("Strings:FilenameFormat");
-                    var filename = string.Format(filenameFormat, dateTime);
+                    var filename = string.Format(Strings.FilenameFormat, dateTime);
                     bitmap.Save(Path.Combine(desktopPath, filename));
                     break;
                 case Operation.EntireScreenToClipboard:
