@@ -3,7 +3,7 @@
   <Identity Name="Shadowshot" Publisher="CN=User" Version="0.2.1.0" />
   <Properties>
     <DisplayName>ms-resource:DisplayName</DisplayName>
-    <PublisherDisplayName>ms-resource:PublisherDisplayName</PublisherDisplayName>
+    <PublisherDisplayName>Kagami Studio</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
