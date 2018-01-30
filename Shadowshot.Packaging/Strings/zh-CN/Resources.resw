@@ -123,4 +123,7 @@
   <data name="Description" xml:space="preserve">
     <value>为你的截图添加优雅的阴影。</value>
   </data>
+  <data name="PublisherDisplayName" xml:space="preserve">
+    <value>Kagami Studio</value>
+  </data>
 </root>

@@ -123,4 +123,7 @@
   <data name="Description" xml:space="preserve">
     <value>Utility that lets you take a screenshot with the drop shadow.</value>
   </data>
+  <data name="PublisherDisplayName" xml:space="preserve">
+    <value>Kagami Studio</value>
+  </data>
 </root>
