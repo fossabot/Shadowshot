@@ -26,6 +26,11 @@ limitations under the License.
         </tb:TaskbarIcon.DataContext>
         <tb:TaskbarIcon.ContextMenu>
             <ContextMenu>
+                <MenuItem Header="{x:Static local:Strings.EntireScreenToDesktop}" Command="{Binding EntireScreenToDesktopCommand}" />
+                <MenuItem Header="{x:Static local:Strings.ActiveWindowToDesktop}" Command="{Binding ActiveWindowToDesktopCommand}" />
+                <MenuItem Header="{x:Static local:Strings.EntireScreenToClipboard}" Command="{Binding EntireScreenToClipboardCommand}" />
+                <MenuItem Header="{x:Static local:Strings.ActiveWindowToClipboard}" Command="{Binding ActiveWindowToClipboardCommand}" />
+                <Separator />
                 <MenuItem Header="{x:Static local:Strings.Settings}" Command="{Binding SettingsCommand}" />
                 <MenuItem Header="{x:Static local:Strings.About}" Command="{Binding AboutCommand}" />
                 <Separator />

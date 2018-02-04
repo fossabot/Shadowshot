@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
@@ -117,51 +118,58 @@ namespace Shadowshot.Services
 
         internal void HandleHotkey(Operation operation)
         {
-            Bitmap bitmap;
-            switch (operation)
+            new Thread(() =>
             {
-                case Operation.EntireScreenToDesktop:
-                case Operation.EntireScreenToClipboard:
-                    bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureEntireScreen();
-                    break;
-                case Operation.ActiveWindowToDesktop:
-                case Operation.ActiveWindowToClipboard:
-                    bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureActiveWindow();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
-            }
+                Thread.Sleep(500);
 
-            bitmap = Locator.CurrentMutable.GetService<EffectService>().DropShadow(bitmap);
+                Bitmap bitmap;
+                switch (operation)
+                {
+                    case Operation.EntireScreenToDesktop:
+                    case Operation.EntireScreenToClipboard:
+                        bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureEntireScreen();
+                        break;
+                    case Operation.ActiveWindowToDesktop:
+                    case Operation.ActiveWindowToClipboard:
+                        bitmap = Locator.CurrentMutable.GetService<ScreenshotService>().CaptureActiveWindow();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
+                }
 
-            switch (operation)
-            {
-                case Operation.EntireScreenToDesktop:
-                case Operation.ActiveWindowToDesktop:
-                    var dateTime = DateTime.Now;
-                    var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    var filename = string.Format(Strings.FilenameFormat, dateTime);
-                    bitmap.Save(Path.Combine(desktopPath, filename));
-                    break;
-                case Operation.EntireScreenToClipboard:
-                case Operation.ActiveWindowToClipboard:
-                    using (var bitmapWithBackground = new Bitmap(bitmap.Width, bitmap.Height))
-                    {
-                        using (var graphics = Graphics.FromImage(bitmapWithBackground))
+                bitmap = Locator.CurrentMutable.GetService<EffectService>().DropShadow(bitmap);
+
+                switch (operation)
+                {
+                    case Operation.EntireScreenToDesktop:
+                    case Operation.ActiveWindowToDesktop:
+                        var dateTime = DateTime.Now;
+                        var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                        var filename = string.Format(Strings.FilenameFormat, dateTime);
+                        bitmap.Save(Path.Combine(desktopPath, filename));
+                        break;
+                    case Operation.EntireScreenToClipboard:
+                    case Operation.ActiveWindowToClipboard:
+                        using (var bitmapWithBackground = new Bitmap(bitmap.Width, bitmap.Height))
                         {
-                            graphics.Clear(Color.White);
-                            graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
+                            using (var graphics = Graphics.FromImage(bitmapWithBackground))
+                            {
+                                graphics.Clear(Color.White);
+                                graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
+                            }
+
+                            var hBitmap = bitmapWithBackground.GetHbitmap();
+                            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+                                hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                            NativeMethods.DeleteObject(hBitmap);
+                            Clipboard.SetImage(bitmapSource);
                         }
-                        var hBitmap = bitmapWithBackground.GetHbitmap();
-                        var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
-                            hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        NativeMethods.DeleteObject(hBitmap);
-                        Clipboard.SetImage(bitmapSource);
-                    }
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
-            }
+
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(operation), operation, null);
+                }
+            }).Start();
         }
 
         internal enum Operation

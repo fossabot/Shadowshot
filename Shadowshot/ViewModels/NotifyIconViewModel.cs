@@ -15,14 +15,38 @@
 using System.Reactive;
 using System.Windows;
 using ReactiveUI;
+using Shadowshot.Services;
 using Shadowshot.Views;
+using Splat;
 
 namespace Shadowshot.ViewModels
 {
     internal class NotifyIconViewModel : ReactiveObject
     {
+        private readonly HotkeyService _hotkeyService = Locator.CurrentMutable.GetService<HotkeyService>();
+
         internal NotifyIconViewModel()
         {
+            EntireScreenToDesktopCommand = ReactiveCommand.Create(() =>
+            {
+                _hotkeyService.HandleHotkey(HotkeyService.Operation.EntireScreenToDesktop);
+            });
+
+            ActiveWindowToDesktopCommand = ReactiveCommand.Create(() =>
+            {
+                _hotkeyService.HandleHotkey(HotkeyService.Operation.ActiveWindowToDesktop);
+            });
+
+            EntireScreenToClipboardCommand = ReactiveCommand.Create(() =>
+            {
+                _hotkeyService.HandleHotkey(HotkeyService.Operation.EntireScreenToClipboard);
+            });
+
+            ActiveWindowToClipboardCommand = ReactiveCommand.Create(() =>
+            {
+                _hotkeyService.HandleHotkey(HotkeyService.Operation.ActiveWindowToClipboard);
+            });
+
             SettingsCommand = ReactiveCommand.Create(() =>
             {
                 var view = new SettingsView();
@@ -37,6 +61,14 @@ namespace Shadowshot.ViewModels
 
             ExitCommand = ReactiveCommand.Create(() => Application.Current.Shutdown());
         }
+
+        public ReactiveCommand<Unit, Unit> EntireScreenToDesktopCommand { get; }
+
+        public ReactiveCommand<Unit, Unit> ActiveWindowToDesktopCommand { get; }
+
+        public ReactiveCommand<Unit, Unit> EntireScreenToClipboardCommand { get; }
+
+        public ReactiveCommand<Unit, Unit> ActiveWindowToClipboardCommand { get; }
 
         public ReactiveCommand<Unit, Unit> SettingsCommand { get; }
 
