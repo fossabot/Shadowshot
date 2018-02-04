@@ -18,6 +18,10 @@ using Shadowshot.Services;
 using Shadowshot.Views;
 using Splat;
 using System.Windows;
+using Windows.Data.Xml.Dom;
+using Windows.Storage;
+using Windows.UI.Notifications;
+using DesktopBridge;
 using Shadowshot.Properties;
 
 namespace Shadowshot
@@ -40,6 +44,29 @@ namespace Shadowshot
 
             Locator.CurrentMutable.RegisterConstant(new MainWindowView(), typeof(MainWindowView));
             Locator.CurrentMutable.RegisterConstant(FindResource("NotifyIcon"), typeof(TaskbarIcon));
+
+            if (new Helpers().IsRunningAsUwp())
+            {
+                var localSettings = ApplicationData.Current.LocalSettings;
+                if (!localSettings.Values.ContainsKey("isFirstTime"))
+                {
+                    var xml = "<toast>" +
+                              "<visual>" +
+                              "<binding template='ToastGeneric'>" +
+                              $"<text>{Strings.Shadowshot}</text>" +
+                              $"<text>{Strings.RunningInTheBackground}</text>" +
+                              "</binding>" +
+                              "</visual>" +
+                              "</toast>";
+
+                    var content = new XmlDocument();
+                    content.LoadXml(xml);
+                    var notification = new ToastNotification(content);
+                    ToastNotificationManager.CreateToastNotifier().Show(notification);
+
+                    localSettings.Values["isFirstTime"] = true;
+                }
+            }
         }
         
         protected override void OnExit(ExitEventArgs e)

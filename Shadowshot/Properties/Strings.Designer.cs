@@ -70,7 +70,7 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a screenshot of active window and save to clipboard:.
+        ///   Looks up a localized string similar to Take a screenshot of active window and save to clipboard.
         /// </summary>
         public static string ActiveWindowToClipboard {
             get {
@@ -79,11 +79,29 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a screenshot of active window and save to desktop:.
+        ///   Looks up a localized string similar to Take a screenshot of active window and save to clipboard:.
+        /// </summary>
+        public static string ActiveWindowToClipboardColon {
+            get {
+                return ResourceManager.GetString("ActiveWindowToClipboardColon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a screenshot of active window and save to desktop.
         /// </summary>
         public static string ActiveWindowToDesktop {
             get {
                 return ResourceManager.GetString("ActiveWindowToDesktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a screenshot of active window and save to desktop:.
+        /// </summary>
+        public static string ActiveWindowToDesktopColon {
+            get {
+                return ResourceManager.GetString("ActiveWindowToDesktopColon", resourceCulture);
             }
         }
         
@@ -97,7 +115,7 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to clipboard:.
+        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to clipboard.
         /// </summary>
         public static string EntireScreenToClipboard {
             get {
@@ -106,11 +124,29 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to desktop:.
+        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to clipboard:.
+        /// </summary>
+        public static string EntireScreenToClipboardColon {
+            get {
+                return ResourceManager.GetString("EntireScreenToClipboardColon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to desktop.
         /// </summary>
         public static string EntireScreenToDesktop {
             get {
                 return ResourceManager.GetString("EntireScreenToDesktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a screenshot of entire screen and save to desktop:.
+        /// </summary>
+        public static string EntireScreenToDesktopColon {
+            get {
+                return ResourceManager.GetString("EntireScreenToDesktopColon", resourceCulture);
             }
         }
         
@@ -174,6 +210,15 @@ namespace Shadowshot.Properties {
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shadowshot is running in the background..
+        /// </summary>
+        public static string RunningInTheBackground {
+            get {
+                return ResourceManager.GetString("RunningInTheBackground", resourceCulture);
             }
         }
         

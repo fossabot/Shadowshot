@@ -44,25 +44,25 @@ limitations under the License.
                 <GroupBox Header="{x:Static local:Strings.KeyboardShortcuts}">
                     <StackPanel Margin="3,5,3,3">
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToDesktop}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToDesktopColon}" />
                             <TextBox x:Name="EntireScreenToDesktopHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding EntireScreenToDesktopHotkeyText}" />
                         </StackPanel>
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToDesktop}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToDesktopColon}" />
                             <TextBox x:Name="ActiveWindowToDesktopHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding ActiveWindowToDesktopHotkeyText}" />
                         </StackPanel>
                         <StackPanel Margin="0,0,0,7">
-                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToClipboard}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.EntireScreenToClipboardColon}" />
                             <TextBox x:Name="EntireScreenToClipboardHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding EntireScreenToClipboardHotkeyText}" />
                         </StackPanel>
                         <StackPanel>
-                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToClipboard}" />
+                            <TextBlock Margin="0,0,0,5" Text="{x:Static local:Strings.ActiveWindowToClipboardColon}" />
                             <TextBox x:Name="ActiveWindowToClipboardHotkeyTextBox"
                                      Height="23" VerticalContentAlignment="Center"
                                      Text="{Binding ActiveWindowToClipboardHotkeyText}" />
