@@ -50,7 +50,7 @@ namespace Shadowshot.Services
                 shadows.Select(x => x.Value.Height).Max());
             using (var graphics = Graphics.FromImage(result))
             {
-                graphics.Clear(Color.Transparent);
+                graphics.Clear(Color.White);
 
                 var offsetList = shadows.Select(x => x.Key.Radius).OrderByDescending(x => x).ToList();
                 using (var enumerator = offsetList.GetEnumerator())
