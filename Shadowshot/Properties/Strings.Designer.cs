@@ -196,7 +196,7 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright 2017-2018 Victorique Ko. All rights reserved..
+        ///   Looks up a localized string similar to Copyright 2017-2018 Kagami Studio. All rights reserved..
         /// </summary>
         public static string License {
             get {

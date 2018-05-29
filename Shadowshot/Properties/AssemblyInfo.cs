@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Shadowshot")]
 [assembly: AssemblyDescription("Shadowshot")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Victorique Ko")]
+[assembly: AssemblyCompany("Kagami Studio")]
 [assembly: AssemblyProduct("Shadowshot")]
-[assembly: AssemblyCopyright("Copyright © Victorique Ko 2017-2018")]
+[assembly: AssemblyCopyright("Copyright © Kagami Studio 2017-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
