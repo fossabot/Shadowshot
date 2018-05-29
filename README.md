@@ -6,7 +6,7 @@
 
 Utility that lets you take a screenshot with the drop shadow.
 
-![Screenshot Example](https://user-images.githubusercontent.com/4309091/33182647-c9f5b9e0-d0af-11e7-968f-40e4bbcc4e17.png)
+![Screenshot Example](https://user-images.githubusercontent.com/4309091/40668326-cb050316-6396-11e8-905d-ca2dea3a74ff.png)
 
 ## Download
 
