@@ -18,10 +18,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using System.Windows;
 using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using Shadowshot.Models;
 using Shadowshot.Properties;
@@ -158,11 +155,14 @@ namespace Shadowshot.Services
                                 graphics.DrawImage(bitmap, System.Drawing.Point.Empty);
                             }
 
-                            var hBitmap = bitmapWithBackground.GetHbitmap();
-                            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
-                                hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                            NativeMethods.DeleteObject(hBitmap);
-                            Clipboard.SetImage(bitmapSource);
+                            // TODO Remove System.Windows.Forms
+                            var thread = new Thread(new ThreadStart(() =>
+                            {
+                                System.Windows.Forms.Clipboard.SetImage(bitmapWithBackground);
+                            }));
+                            thread.SetApartmentState(ApartmentState.STA);
+                            thread.Start();
+                            thread.Join();
                         }
 
                         break;
