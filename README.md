@@ -1,8 +1,6 @@
 # Shadowshot
 
-[![AppVeyor](https://img.shields.io/appveyor/ci/victoriqueko/shadowshot/master.svg)](https://ci.appveyor.com/project/victoriqueko/shadowshot/branch/master)
-
-## What is Shadowshot?
+[![Build status](https://ci.appveyor.com/api/projects/status/hdt0ub0k9udlpqqw/branch/master?svg=true)](https://ci.appveyor.com/project/victoriqueko/shadowshot/branch/master)
 
 Utility that lets you take a screenshot with the drop shadow.
 
