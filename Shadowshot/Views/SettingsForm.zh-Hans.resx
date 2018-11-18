@@ -118,124 +118,71 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 239</value>
+  <data name="isAutoStartCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
   </data>
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 3</value>
+  <data name="isAutoStartCheckBox.Text" xml:space="preserve">
+    <value>开机自动启动 Shadowshot</value>
   </data>
-  <data name="&gt;&gt;generalGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="keyboardShortcutsGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardLabel.Name" xml:space="preserve">
-    <value>activeWindowToClipboardLabel</value>
-  </data>
-  <data name="&gt;&gt;keyboardShortcutsGroupBox.Name" xml:space="preserve">
-    <value>keyboardShortcutsGroupBox</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="activeWindowToDesktopTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="activeWindowToClipboardTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="generalGroupBox.Text" xml:space="preserve">
+    <value>通用</value>
   </data>
   <data name="entireScreenToDesktopTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 4</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopLabel.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopTextBox.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 13</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 13</value>
-  </data>
-  <data name="&gt;&gt;keyboardShortcutsTableLayoutPanel.Parent" xml:space="preserve">
-    <value>keyboardShortcutsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;buttonFlowLayoutPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;keyboardShortcutsGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.Text" xml:space="preserve">
-    <value>Take a screenshot of entire screen and save to clipboard:</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardTextBox.Name" xml:space="preserve">
-    <value>activeWindowToClipboardTextBox</value>
+    <value>178, 4</value>
   </data>
   <data name="entireScreenToDesktopTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 20</value>
+    <value>407, 20</value>
   </data>
-  <data name="&gt;&gt;activeWindowToClipboardLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="activeWindowToDesktopTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 33</value>
   </data>
-  <data name="isAutoStartCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 17</value>
+  <data name="activeWindowToDesktopTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 20</value>
   </data>
-  <data name="&gt;&gt;activeWindowToClipboardLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;keyboardShortcutsGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="entireScreenToDesktopLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
-  </data>
-  <data name="isAutoStartCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardTextBox.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
+  <data name="entireScreenToClipboardTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 62</value>
   </data>
   <data name="entireScreenToClipboardTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 20</value>
+    <value>407, 20</value>
   </data>
-  <data name="entireScreenToDesktopLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
+  <data name="activeWindowToClipboardTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 92</value>
   </data>
   <data name="activeWindowToClipboardTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 20</value>
+    <value>407, 20</value>
   </data>
-  <data name="&gt;&gt;entireScreenToDesktopTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="entireScreenToDesktopLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
   </data>
-  <data name="&gt;&gt;keyboardShortcutsTableLayoutPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="entireScreenToDesktopLabel.Text" xml:space="preserve">
+    <value>截取整个屏幕并保存到桌面：</value>
   </data>
-  <data name="&gt;&gt;keyboardShortcutsTableLayoutPanel.Name" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
+  <data name="activeWindowToDesktopLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
   </data>
-  <data name="&gt;&gt;keyboardShortcutsGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="activeWindowToDesktopLabel.Text" xml:space="preserve">
+    <value>截取活动窗口并保存到桌面：</value>
   </data>
-  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="entireScreenToClipboardLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 13</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="entireScreenToClipboardLabel.Text" xml:space="preserve">
+    <value>截取整个屏幕并保存到剪贴板：</value>
+  </data>
+  <data name="activeWindowToClipboardLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 13</value>
+  </data>
+  <data name="activeWindowToClipboardLabel.Text" xml:space="preserve">
+    <value>截取活动窗口并保存到剪贴板：</value>
+  </data>
+  <data name="keyboardShortcutsGroupBox.Text" xml:space="preserve">
+    <value>快捷键</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>确定</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6409,346 +6356,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="&gt;&gt;entireScreenToDesktopLabel.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>设置</value>
   </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;generalGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalGroupBox.Name" xml:space="preserve">
-    <value>generalGroupBox</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="generalTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToClipboardTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.Text" xml:space="preserve">
-    <value>Take a screenshot of active window and save to clipboard:</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopLabel.Name" xml:space="preserve">
-    <value>activeWindowToDesktopLabel</value>
-  </data>
-  <data name="buttonFlowLayoutPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>RightToLeft</value>
-  </data>
-  <data name="entireScreenToDesktopLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardTextBox.Name" xml:space="preserve">
-    <value>entireScreenToClipboardTextBox</value>
-  </data>
-  <data name="&gt;&gt;isAutoStartCheckBox.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="isAutoStartCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardLabel.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 13</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardTextBox.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="activeWindowToDesktopTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 20</value>
-  </data>
-  <data name="&gt;&gt;buttonFlowLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingsForm</value>
-  </data>
-  <data name="entireScreenToDesktopLabel.Text" xml:space="preserve">
-    <value>Take a screenshot of entire screen and save to desktop:</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="generalTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="isAutoStartCheckBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="generalGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonFlowLayoutPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;isAutoStartCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToClipboardTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 92</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopLabel.Name" xml:space="preserve">
-    <value>entireScreenToDesktopLabel</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
-    <value>okButton</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonFlowLayoutPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="entireScreenToClipboardTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 62</value>
-  </data>
-  <data name="keyboardShortcutsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 142</value>
-  </data>
-  <data name="&gt;&gt;isAutoStartCheckBox.Name" xml:space="preserve">
-    <value>isAutoStartCheckBox</value>
-  </data>
-  <data name="keyboardShortcutsGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
-    <value>buttonFlowLayoutPanel</value>
-  </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Name" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="isAutoStartCheckBox.Text" xml:space="preserve">
-    <value>Launch Shadowshot when system starts</value>
-  </data>
-  <data name="buttonFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>588, 36</value>
-  </data>
-  <data name="entireScreenToDesktopLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;generalGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>buttonFlowLayoutPanel</value>
-  </data>
-  <data name="isAutoStartCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="activeWindowToDesktopTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 33</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 30</value>
-  </data>
-  <data name="entireScreenToClipboardTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="generalGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="entireScreenToDesktopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 13</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="entireScreenToClipboardLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 66</value>
-  </data>
-  <data name="entireScreenToClipboardTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="entireScreenToDesktopTextBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="activeWindowToDesktopTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="entireScreenToClipboardTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="activeWindowToClipboardTextBox" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="entireScreenToDesktopLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="activeWindowToDesktopLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="entireScreenToClipboardLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="activeWindowToClipboardLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="generalTableLayoutPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 3</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="entireScreenToDesktopTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="keyboardShortcutsGroupBox.Text" xml:space="preserve">
-    <value>Keyboard Shortcuts</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToClipboardLabel.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopTextBox.Name" xml:space="preserve">
-    <value>activeWindowToDesktopTextBox</value>
-  </data>
-  <data name="activeWindowToDesktopTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;isAutoStartCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;keyboardShortcutsTableLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.Text" xml:space="preserve">
-    <value>Take a screenshot of active window and save to desktop:</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Parent" xml:space="preserve">
-    <value>generalGroupBox</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>588, 117</value>
-  </data>
-  <data name="generalGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 61</value>
-  </data>
-  <data name="keyboardShortcutsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 79</value>
-  </data>
-  <data name="entireScreenToDesktopTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopTextBox.Parent" xml:space="preserve">
-    <value>keyboardShortcutsTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopTextBox.Name" xml:space="preserve">
-    <value>entireScreenToDesktopTextBox</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 281</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="isAutoStartCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToClipboardLabel.Name" xml:space="preserve">
-    <value>entireScreenToClipboardLabel</value>
-  </data>
-  <data name="keyboardShortcutsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="generalGroupBox.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="activeWindowToClipboardLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 95</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 37</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;buttonFlowLayoutPanel.Name" xml:space="preserve">
-    <value>buttonFlowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;activeWindowToDesktopLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="generalTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="generalTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="activeWindowToDesktopLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;entireScreenToDesktopLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

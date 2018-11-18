@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Shadowshot.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -52,7 +53,7 @@ namespace Shadowshot.Services
                 case Operation.EntireScreenToDesktop:
                 case Operation.ActiveWindowToDesktop:
                     var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    var filename = string.Format("Screen Shot {0:yyyy-MM-dd} at {0:h.mm.ss tt}.png", DateTime.Now);
+                    var filename = string.Format(Resources.filenameFormat, DateTime.Now);
                     screenshot.Save(Path.Combine(desktopPath, filename));
                     break;
                 case Operation.EntireScreenToClipboard:

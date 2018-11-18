@@ -46,19 +46,9 @@ namespace Shadowshot
             {
                 if (Utils.IsRunningAsUwp())
                 {
-                    var xml = "<toast>" +
-                        "<visual>" +
-                        "<binding template='ToastGeneric'>" +
-                        "<text>Shadowshot</text>" +
-                        "<text>Shadowshot is running in the background.</text>" +
-                        "</binding>" +
-                        "</visual>" +
-                        "</toast>";
-
                     var content = new XmlDocument();
-                    content.LoadXml(xml);
-                    var notification = new ToastNotification(content);
-                    ToastNotificationManager.CreateToastNotifier().Show(notification);
+                    content.LoadXml(Resources.firstRunNotification);
+                    ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(content));
                 }
 
                 Settings.Default.isFirstTime = false;

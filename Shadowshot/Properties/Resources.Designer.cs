@@ -61,11 +61,54 @@ namespace Shadowshot.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Version {0}.
+        /// </summary>
+        internal static string aboutFormLabelVersionText {
+            get {
+                return ResourceManager.GetString("aboutFormLabelVersionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About {0}.
+        /// </summary>
+        internal static string aboutFormText {
+            get {
+                return ResourceManager.GetString("aboutFormText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen Shot {0:yyyy-MM-dd} at {0:h.mm.ss tt}.png.
+        /// </summary>
+        internal static string filenameFormat {
+            get {
+                return ResourceManager.GetString("filenameFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;toast&gt;
+        ///  &lt;visual&gt;
+        ///    &lt;binding template=&apos;ToastGeneric&apos;&gt;
+        ///      &lt;text&gt;Shadowshot&lt;/text&gt;
+        ///      &lt;text&gt;Shadowshot is running in the background.&lt;/text&gt;
+        ///    &lt;/binding&gt;
+        ///  &lt;/visual&gt;
+        ///&lt;/toast&gt;.
+        /// </summary>
+        internal static string firstRunNotification {
+            get {
+                return ResourceManager.GetString("firstRunNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Icon {
+        internal static System.Drawing.Icon icon {
             get {
-                object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

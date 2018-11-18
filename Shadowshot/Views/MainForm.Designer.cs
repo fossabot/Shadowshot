@@ -47,9 +47,7 @@
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Shadowshot";
-            this.notifyIcon.Visible = true;
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
             // 
             // contextMenuStrip
             // 
@@ -64,74 +62,65 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(377, 170);
+            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             // 
             // entireScreenToDesktopToolStripMenuItem
             // 
             this.entireScreenToDesktopToolStripMenuItem.Name = "entireScreenToDesktopToolStripMenuItem";
-            this.entireScreenToDesktopToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.entireScreenToDesktopToolStripMenuItem.Text = "Take a screenshot of entire screen and save to desktop";
+            resources.ApplyResources(this.entireScreenToDesktopToolStripMenuItem, "entireScreenToDesktopToolStripMenuItem");
             this.entireScreenToDesktopToolStripMenuItem.Click += new System.EventHandler(this.entireScreenToDesktopToolStripMenuItem_Click);
             // 
             // activeWindowToDesktopToolStripMenuItem
             // 
             this.activeWindowToDesktopToolStripMenuItem.Name = "activeWindowToDesktopToolStripMenuItem";
-            this.activeWindowToDesktopToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.activeWindowToDesktopToolStripMenuItem.Text = "Take a screenshot of active window and save to desktop";
+            resources.ApplyResources(this.activeWindowToDesktopToolStripMenuItem, "activeWindowToDesktopToolStripMenuItem");
             this.activeWindowToDesktopToolStripMenuItem.Click += new System.EventHandler(this.activeWindowToDesktopToolStripMenuItem_Click);
             // 
             // entireScreenToClipboardToolStripMenuItem
             // 
             this.entireScreenToClipboardToolStripMenuItem.Name = "entireScreenToClipboardToolStripMenuItem";
-            this.entireScreenToClipboardToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.entireScreenToClipboardToolStripMenuItem.Text = "Take a screenshot of entire screen and save to clipboard";
+            resources.ApplyResources(this.entireScreenToClipboardToolStripMenuItem, "entireScreenToClipboardToolStripMenuItem");
             this.entireScreenToClipboardToolStripMenuItem.Click += new System.EventHandler(this.entireScreenToClipboardToolStripMenuItem_Click);
             // 
             // activeWindowToClipboardToolStripMenuItem
             // 
             this.activeWindowToClipboardToolStripMenuItem.Name = "activeWindowToClipboardToolStripMenuItem";
-            this.activeWindowToClipboardToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.activeWindowToClipboardToolStripMenuItem.Text = "Take a screenshot of active window and save to clipboard";
+            resources.ApplyResources(this.activeWindowToClipboardToolStripMenuItem, "activeWindowToClipboardToolStripMenuItem");
             this.activeWindowToClipboardToolStripMenuItem.Click += new System.EventHandler(this.activeWindowToClipboardToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(373, 6);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.settingsToolStripMenuItem.Text = "Settings...";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.aboutToolStripMenuItem.Text = "About...";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(373, 6);
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // Main
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Main";
-            this.Text = "Main";
+            this.Name = "MainForm";
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
