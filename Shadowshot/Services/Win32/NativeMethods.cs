@@ -20,7 +20,6 @@ namespace Shadowshot.Services.Win32
 {
     internal static class NativeMethods
     {
-        [StructLayout(LayoutKind.Sequential)]
         internal struct WindowInfo
         {
             private readonly uint cbSize;
@@ -34,8 +33,7 @@ namespace Shadowshot.Services.Win32
             private readonly ushort atomWindowType;
             private readonly ushort wCreatorVersion;
         }
-
-        [StructLayout(LayoutKind.Sequential)]
+        
         internal struct Rect
         {
             internal readonly int Left;
