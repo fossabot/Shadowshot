@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## 0.3.1 - 2018-11-19
 ### Added
 - zh-Hans translation
+### Fixed
+- Fix OK button in settings form
 
 ## 0.3.0 - 2018-11-18
 ### Added

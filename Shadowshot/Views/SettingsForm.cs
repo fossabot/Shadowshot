@@ -91,6 +91,8 @@ namespace Shadowshot.Views
             Settings.Default.activeWindowToClipboardKeyData = (Keys)keysConverter.ConvertFromInvariantString(activeWindowToClipboardTextBox.Text);
 
             Settings.Default.Save();
+
+            Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
