@@ -12,23 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Windows.Interop;
-using Shadowshot.ViewModels;
+using Shadowshot.Services.Win32;
+using System.Text;
 
-namespace Shadowshot.Views
+namespace Shadowshot.Services.UWP
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    partial class MainWindowView
+    internal static class Utils
     {
-        public MainWindowView()
+        internal static bool IsRunningAsUwp()
         {
-            InitializeComponent();
-
-            var handle = new WindowInteropHelper(this).EnsureHandle();
-            var viewModel = (MainViewModel) DataContext;
-            viewModel.RegisterHotkey(handle);
+            var length = 0;
+            return NativeMethods.GetCurrentPackageFullName(ref length, new StringBuilder(0)) != NativeMethods.APPMODEL_ERROR_NO_PACKAGE;
         }
     }
 }

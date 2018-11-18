@@ -20,8 +20,16 @@ using StackBlur.Extensions;
 
 namespace Shadowshot.Services
 {
-    internal class EffectService
+    internal static class EffectService
     {
+        private struct ShadowConfig
+        {
+            internal int DistanceX;
+            internal int DistanceY;
+            internal Color Color;
+            internal int Radius;
+        }
+
         private static readonly List<ShadowConfig> DefaultShadow = new List<ShadowConfig>
         {
             new ShadowConfig
@@ -40,7 +48,7 @@ namespace Shadowshot.Services
             }
         };
 
-        internal Bitmap DropShadow(Bitmap bitmap)
+        internal static Bitmap DropShadow(Bitmap bitmap)
         {
             var shadows = DefaultShadow.ToDictionary(x => x, x => CreateShadow(bitmap, x));
 
@@ -92,14 +100,6 @@ namespace Shadowshot.Services
             shadow.StackBlur(cfg.Radius);
 
             return shadow;
-        }
-
-        private struct ShadowConfig
-        {
-            internal int DistanceX;
-            internal int DistanceY;
-            internal Color Color;
-            internal int Radius;
         }
     }
 }

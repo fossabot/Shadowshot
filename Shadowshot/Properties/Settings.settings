@@ -1,7 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Shadowshot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="entireScreenToDesktopKeyData" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Alt+Shift+3</Value>
+    </Setting>
+    <Setting Name="activeWindowToDesktopKeyData" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Alt+Shift+4</Value>
+    </Setting>
+    <Setting Name="entireScreenToClipboardKeyData" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Ctrl+Alt+Shift+3</Value>
+    </Setting>
+    <Setting Name="activeWindowToClipboardKeyData" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Ctrl+Alt+Shift+4</Value>
+    </Setting>
+    <Setting Name="isFirstTime" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -12,43 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Drawing;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Windows;
 using Shadowshot.Services.Win32;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace Shadowshot.Services
 {
-    internal class ScreenshotService
+    internal static class ScreenshotService
     {
-        internal Bitmap CaptureEntireScreen()
+        internal static Bitmap CaptureEntireScreen()
         {
-            var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
-            var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
+            int x = NativeMethods.GetSystemMetrics(NativeMethods.SM_XVIRTUALSCREEN);
+            int y = NativeMethods.GetSystemMetrics(NativeMethods.SM_YVIRTUALSCREEN);
+            int cx = NativeMethods.GetSystemMetrics(NativeMethods.SM_CXVIRTUALSCREEN);
+            int cy = NativeMethods.GetSystemMetrics(NativeMethods.SM_CYVIRTUALSCREEN);
 
-            if (dpiXProperty == null || dpiYProperty == null)
-                throw new NullReferenceException();
-
-            var dpiX = (int) dpiXProperty.GetValue(null);
-            var dpiY = (int) dpiYProperty.GetValue(null);
-
-            return CaptureRect(new Rectangle(
-                (int) SystemParameters.VirtualScreenLeft, (int) SystemParameters.VirtualScreenTop,
-                (int) SystemParameters.VirtualScreenWidth * dpiX / 96, (int) SystemParameters.VirtualScreenHeight * dpiY / 96));
+            return CaptureRect(new Rectangle(x, y, cx, cy));
         }
 
-        internal Bitmap CaptureActiveWindow()
+        internal static Bitmap CaptureActiveWindow()
         {
             var handle = NativeMethods.GetForegroundWindow();
             NativeMethods.DwmGetWindowAttribute(
-                handle, NativeMethods.DwmWindowAttribute.DwmwaExtendedFrameBounds,
-                out var rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
+                handle, NativeMethods.DwmWindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out var rect, Marshal.SizeOf(typeof(NativeMethods.Rect)));
             NativeMethods.GetWindowInfo(handle, out var windowInfo);
             var rectangle = Rectangle.FromLTRB(rect.Left, rect.Top, rect.Right, rect.Bottom);
             if (NativeMethods.IsZoomed(handle) && rectangle.Left < 0 && rectangle.Top < 0)
-                rectangle.Inflate((int) -windowInfo.cxWindowBorders, (int) -windowInfo.cyWindowBorders);
+            {
+                rectangle.Inflate((int)-windowInfo.cxWindowBorders, (int)-windowInfo.cyWindowBorders);
+            }
             return CaptureRect(rectangle);
         }
 
@@ -59,6 +51,7 @@ namespace Shadowshot.Services
             {
                 graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0, rect.Size);
             }
+
             return screenshot;
         }
     }

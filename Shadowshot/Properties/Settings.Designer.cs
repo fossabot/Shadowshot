@@ -8,22 +8,78 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shadowshot.Properties
-{
-
-
+namespace Shadowshot.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alt+Shift+3")]
+        public global::System.Windows.Forms.Keys entireScreenToDesktopKeyData {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["entireScreenToDesktopKeyData"]));
+            }
+            set {
+                this["entireScreenToDesktopKeyData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alt+Shift+4")]
+        public global::System.Windows.Forms.Keys activeWindowToDesktopKeyData {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["activeWindowToDesktopKeyData"]));
+            }
+            set {
+                this["activeWindowToDesktopKeyData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Alt+Shift+3")]
+        public global::System.Windows.Forms.Keys entireScreenToClipboardKeyData {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["entireScreenToClipboardKeyData"]));
+            }
+            set {
+                this["entireScreenToClipboardKeyData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Alt+Shift+4")]
+        public global::System.Windows.Forms.Keys activeWindowToClipboardKeyData {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["activeWindowToClipboardKeyData"]));
+            }
+            set {
+                this["activeWindowToClipboardKeyData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool isFirstTime {
+            get {
+                return ((bool)(this["isFirstTime"]));
+            }
+            set {
+                this["isFirstTime"] = value;
             }
         }
     }
