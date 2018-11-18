@@ -54,8 +54,8 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StackBlur, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackBlur.0.1.0\lib\net461\StackBlur.dll</HintPath>
+    <Reference Include="StackBlur, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackBlur.0.1.1\lib\net461\StackBlur.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
